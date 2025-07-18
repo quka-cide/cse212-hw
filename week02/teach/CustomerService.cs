@@ -11,10 +11,11 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: create queue with negative number
+        // Expected Result: 10
         Console.WriteLine("Test 1");
-
+        var cs = new CustomerService(-2);
+        Console.WriteLine(cs._maxSize);
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
