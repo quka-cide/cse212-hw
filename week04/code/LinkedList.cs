@@ -162,26 +162,11 @@ public class LinkedList : IEnumerable<int>
     {
         // TODO Problem 4
         Node curr = _head;
-        while (curr is not null)
+        while (curr != null)
         {
             if (curr.Data == oldValue)
             {
-                if (curr == _head)
-                {
-                    RemoveHead();
-                    InsertHead(newValue);
-                }
-                else if (curr == _tail)
-                {
-                    RemoveTail();
-                    InsertTail(newValue);
-                }
-                else
-                {
-                    InsertAfter(oldValue, newValue);
-                    Remove(oldValue);
-                    
-                }
+                curr.Data = newValue;
             }
             curr = curr.Next;
         }
