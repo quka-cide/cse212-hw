@@ -1,3 +1,5 @@
+using Newtonsoft.Json.Bson;
+
 public static class Trees
 {
     /// <summary>
@@ -49,5 +51,15 @@ public static class Trees
     private static void InsertMiddle(int[] sortedNumbers, int first, int last, BinarySearchTree bst)
     {
         // TODO Start Problem 5
+        if (first > last)
+        {
+            return;
+        }
+
+        int middle = (first + last) / 2;
+
+        bst.Insert(sortedNumbers[middle]);
+        InsertMiddle(sortedNumbers, first, middle - 1, bst);
+        InsertMiddle(sortedNumbers, middle + 1, last, bst);
     }
 }
